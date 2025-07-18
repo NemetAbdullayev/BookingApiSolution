@@ -10,31 +10,33 @@ namespace BookingApi.Repositories.Concrete
 
         public HomeRepository()
         {
-            var home1 = new Home
+            var homes = new[]
             {
-                HomeId = "123",
-                HomeName = "Home 1",
-                AvailableSlots = new HashSet<DateOnly>
-            {
-                new DateOnly(2025,7,15),
-                new DateOnly(2025,7,16),
-                new DateOnly(2025,7,17)
-            }
+                new Home
+                {
+                    HomeId = "123",
+                    HomeName = "Home 1",
+                    AvailableSlots = new HashSet<DateOnly>
+                    {
+                        new(2025, 7, 15),
+                        new(2025, 7, 16),
+                        new(2025, 7, 17)
+                    }
+                },
+                new Home
+                {
+                    HomeId = "456",
+                    HomeName = "Home 2",
+                    AvailableSlots = new HashSet<DateOnly>
+                    {
+                        new(2025, 7, 17),
+                        new(2025, 7, 18)
+                    }
+                }
             };
 
-            var home2 = new Home
-            {
-                HomeId = "456",
-                HomeName = "Home 2",
-                AvailableSlots = new HashSet<DateOnly>
-            {
-                new DateOnly(2025,7,17),
-                new DateOnly(2025,7,18)
-            }
-            };
-
-            _homes.TryAdd(home1.HomeId, home1);
-            _homes.TryAdd(home2.HomeId, home2);
+            foreach (var home in homes)
+                _homes.TryAdd(home.HomeId, home);
         }
 
         public Task<List<Home>> GetAllHomesAsync()

@@ -15,9 +15,9 @@ namespace BookingApi.Services.Concrete
 
         public async Task<List<Home>> GetAvailableHomesAsync(DateOnly startDate, DateOnly endDate)
         {
-            var requestedDates = Enumerable.Range(0, (endDate.DayNumber - startDate.DayNumber + 1))
-                .Select(i => startDate.AddDays(i))
-                .ToHashSet();
+            var requestedDates = new HashSet<DateOnly>(
+                Enumerable.Range(0, (endDate.DayNumber - startDate.DayNumber + 1))
+                .Select(i => startDate.AddDays(i)));
 
             var allHomes = await _homeRepository.GetAllHomesAsync();
 

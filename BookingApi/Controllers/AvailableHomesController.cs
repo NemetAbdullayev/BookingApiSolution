@@ -1,6 +1,5 @@
 using BookingApi.Services.Abstract;
 using Microsoft.AspNetCore.Mvc;
-
 namespace BookingApi.Controllers
 {
     [ApiController]
@@ -26,20 +25,27 @@ namespace BookingApi.Controllers
             [FromQuery] DateOnly endDate)
         {
             if (startDate > endDate)
-                return BadRequest("Start date must be earlier than or equal to end date.");
+            {
+                return BadRequest(new
+                {
+                    status = "BadRequest",
+                    message = "Start date must be earlier than or equal to end date."
+                });
+            }
 
             var homes = await _availabilityService.GetAvailableHomesAsync(startDate, endDate);
 
-            return Ok(new
+            var response = new
             {
                 status = "OK",
                 homes = homes.Select(h => new
                 {
                     h.HomeId,
                     h.HomeName,
-                    availableSlots = h.AvailableSlots.Select(d => d.ToString("yyyy-MM-dd"))
+                    availableSlots = h.AvailableSlots.OrderBy(date => date).Select(date => date.ToString("yyyy-MM-dd"))
                 })
-            });
+            };
+            return Ok(response);
         }
     }
 }
