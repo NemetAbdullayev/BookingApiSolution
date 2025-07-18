@@ -46,5 +46,10 @@ Response body
 - System.Text.Json.Nodes — for parsing and asserting JSON response
 - public class AvailableHomesTests : IClassFixture<WebApplicationFactory<Program>>
 
+  8.How to Run the Tests
+  Open the Test Explorer window (Test > Test Explorer).
+  Find the tests under the BookingApi.Tests
+  Click 'Run All Tests In View' to execute the tests
+
 
 
