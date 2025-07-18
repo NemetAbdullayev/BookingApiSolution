@@ -31,7 +31,6 @@ Response body
   ]
 }
 6.Architecture
-
 - Controllers: Handle HTTP requests and responses.
 - Services: Contain the filtering logic and business rules.
 - Repositories: Store in-memory home and slot data using ConcurrentDictionary.
