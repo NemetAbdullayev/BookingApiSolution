@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApi", "BookingApi\BookingApi.csproj", "{B93B5CD4-19E4-434F-AB31-5D6BA476A43F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApi.Tests", "BookingApi.Tests\BookingApi.Tests.csproj", "{A96E318D-A150-44F4-8494-011549C498E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B93B5CD4-19E4-434F-AB31-5D6BA476A43F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93B5CD4-19E4-434F-AB31-5D6BA476A43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93B5CD4-19E4-434F-AB31-5D6BA476A43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93B5CD4-19E4-434F-AB31-5D6BA476A43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A96E318D-A150-44F4-8494-011549C498E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A96E318D-A150-44F4-8494-011549C498E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A96E318D-A150-44F4-8494-011549C498E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A96E318D-A150-44F4-8494-011549C498E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C2844DF-BDE8-49DD-BDA5-CABDB55A3E48}
+	EndGlobalSection
+EndGlobal
