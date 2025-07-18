@@ -1,18 +1,25 @@
 BookingApiSolution is a solution that contains a .NET 8 Web API for retrieving available homes based on a date range. Data is stored in memory using ConcurrentDictionary, and the filtering logic is implemented asynchronously and tested with integration tests.
 1.  Clone the repository:
+2.  
  Open a terminal or Git Bash and run:
+
 git clone https://github.com/NemetAbdullayev/BookingApiSolution.git
-2. Open the Solution in Visual Studio
+
+4. Open the Solution in Visual Studio
+5. 
 • Open Visual Studio 2022.
 • Go to File > Open > Project/Solution.
 • Navigate to the cloned folder and open: BookingApiSolution.sln
    3. Set the Startup Project
+   4. 
 • In Solution Explorer, right-click on the 'BookingApi' project.
 • Select 'Set as Startup Project'.
-4. Run the Application
+6. Run the Application
+7.                                                                                                                                       
 • Press F5 or click the green 'Run' button.
 • The API will launch in your default browser.
-5. Open Swagger UI in browser:
+6. Open Swagger UI in browser:
+
 Send a GET request to:
 /api/available-homes?startDate=2025-07-15&endDate=2025-07-16
 	
@@ -45,7 +52,7 @@ Response body
 - System.Text.Json.Nodes — for parsing and asserting JSON response
 - public class AvailableHomesTests : IClassFixture<WebApplicationFactory<Program>>
 
-  8.How to Run the Tests
+  8.How to Run the Tests                                                                                                                                                                                              
   Open the Test Explorer window (Test > Test Explorer).
   Find the tests under the BookingApi.Tests
   Click 'Run All Tests In View' to execute the tests
