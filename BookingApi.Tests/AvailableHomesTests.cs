@@ -17,7 +17,7 @@ namespace BookingApi.Tests
         [Fact]
         public async Task ShouldReturnHome1_ForDates_2025_07_15_to_2025_07_16()
         {
-            var url = "/api/AvailableHomes?startDate=2025-07-15&endDate=2025-07-16";
+            var url = "/api/available-homes?startDate=2025-07-15&endDate=2025-07-16";
 
             var response = await _client.GetAsync(url);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -35,7 +35,7 @@ namespace BookingApi.Tests
         [Fact]
         public async Task ShouldReturnEmpty_WhenDateRangeNotFullyCovered()
         {
-            var url = "/api/AvailableHomes?startDate=2025-07-15&endDate=2025-07-18";
+            var url = "/api/available-homes?startDate=2025-07-15&endDate=2025-07-18";
 
             var response = await _client.GetAsync(url);
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
@@ -51,7 +51,7 @@ namespace BookingApi.Tests
         [Fact]
         public async Task ShouldReturnBadRequest_IfStartDateGreaterThanEndDate()
         {
-            var url = "/api/AvailableHomes?startDate=2025-07-18&endDate=2025-07-15";
+            var url = "/api/available-homes?startDate=2025-07-18&endDate=2025-07-15";
 
             var response = await _client.GetAsync(url);
 
